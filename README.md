@@ -7,12 +7,13 @@ The goal of this project is to replace the default firmware of the JHE42B and JH
 (checked if implemented)
 
 - [x] BEEPS every 30s after power loss (default)
-- [x] Turn ON/OFF onboard red LED depending on arming status (ON when armed)
-- [x] Disarm system when button is pressed
+- [x] Turn ON/OFF onboard red LED depending on arming status (ON when armed, blinking when triggered, off when disarmed)
+- [x] Arm/Disarm system when button is long-pressed
 - [x] Disarm if power supply is removed after ``10-12s`` if armed (usefull when button is not accesible)
 - [x] Power saving by changing BEEPS frequency `10s` / `30s` / `60s` (default ``30s``)
+- [x] Sleep mode when disarmed in order not to strain the battery
 - [x] BEEPS on signal pin request
-- [x] LIGHT flashs for every beeps (built-in)
+- [x] LIGHT flashs independant of beeps
 
 
 ## Board testing matrix
