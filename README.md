@@ -10,7 +10,7 @@ The goal of this project is to replace the default firmware of the JHE42B and JH
 - [x] Turn ON/OFF onboard red LED depending on arming status (ON when armed)
 - [x] Disarm system when button is pressed
 - [x] Disarm if power supply is removed after ``10-12s`` if armed (usefull when button is not accesible)
-- [ ] Power saving by changing BEEPS frequency `10s` / `30s` / `60s` (default ``30s``)
+- [x] Power saving by changing BEEPS frequency `10s` / `30s` / `60s` (default ``30s``)
 - [x] BEEPS on signal pin request
 - [x] LIGHT flashs for every beeps (built-in)
 
@@ -19,7 +19,7 @@ The goal of this project is to replace the default firmware of the JHE42B and JH
 
 |Model|BEEPS on power loss|Arming Red LED|Button disarm| Power source trick disarm| Power saving | LED Flash | BEEPS on signal
 |---|---|---|---|---|---|---|---|
-|JHE42B|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:||:x:|:heavy_check_mark:|
+|JHE42B|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:||:heavy_check_mark:|:heavy_check_mark:|
 |JHE42B_S|:grey_question:|:grey_question:|:grey_question:|:grey_question:||:grey_question:|:grey_question:|
 
 :x: ko / :heavy_check_mark: ok / :grey_question: todo or more testing required
@@ -31,11 +31,11 @@ The goal of this project is to replace the default firmware of the JHE42B and JH
 2. ``Alarm``:
    - The buzzer will beep every 30 seconds after power is lost.
 3. ``Disarming`` the Buzzer:
-   - Long press the onboard button 3 times (you hear1-note when press is registered), or
+   - Long press the onboard button for 8 seconds (you hear a 3-notes melody when disarming), or
    - Apply power for ``10 seconds`` and then remove it.
    - You will hear a 3-note disarming tune, and the red LED will turn OFF.
 4. ``Rearming``:
-   - After disarming, the buzzer needs to be power cycled to be rearmed.
+   - After disarming, long press the onboard button for 8 seconds or power cycle the device to be rearm ((you hear a 3-notes melody when arming).
 
 
 # How to Build/Flash
@@ -55,8 +55,8 @@ Otherwise add board definition [stm8s003f3.json](https://github.com/nerocide/pla
 > C:\Users\<user>\.platformio\platforms\ststm8\boards
 
 
-## Unlock chip
-Every chip has to be unlocked once. (from experience)
+## Unlock chip (inmportant)
+Every chip has to be unlocked once (from experience), after the first unlock it's not needed anymore.
 ```
 cd .platformio\packages\tool-stm8tools
 stm8flash -c stlinkv2 -u -p stm8s003?3
